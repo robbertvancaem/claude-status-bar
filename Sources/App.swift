@@ -13,10 +13,14 @@ struct ClaudeStatusBarApp: App {
         MenuBarExtra {
             StatusMenuView(model: model)
         } label: {
-            Image(systemName: model.iconName)
-                .renderingMode(.original)
-                .foregroundStyle(model.iconColor)
-                .opacity(model.iconOpacity)
+            if model.indicator == "none" {
+                Image(systemName: model.iconName)
+            } else {
+                Image(systemName: model.iconName)
+                    .renderingMode(.original)
+                    .foregroundStyle(model.iconColor)
+                    .opacity(model.iconOpacity)
+            }
         }
         .menuBarExtraStyle(.window)
     }
