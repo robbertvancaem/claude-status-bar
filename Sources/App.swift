@@ -16,6 +16,7 @@ struct ClaudeStatusBarApp: App {
             Image(systemName: model.iconName)
                 .renderingMode(.original)
                 .foregroundStyle(model.iconColor)
+                .opacity(model.iconOpacity)
         }
         .menuBarExtraStyle(.window)
     }

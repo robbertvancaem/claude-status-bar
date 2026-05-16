@@ -41,6 +41,7 @@ struct StatusMenuView: View {
         HStack(spacing: 8) {
             Image(systemName: model.iconName)
                 .foregroundStyle(model.iconColor)
+                .opacity(model.iconOpacity)
                 .font(.system(size: 14, weight: .semibold))
             VStack(alignment: .leading, spacing: 2) {
                 Text(model.label(for: model.indicator))

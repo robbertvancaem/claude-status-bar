@@ -83,18 +83,14 @@ final class StatusModel: ObservableObject {
         UNUserNotificationCenter.current().add(request)
     }
 
-    var iconName: String {
-        switch indicator {
-        case "none": return "circle.fill"
-        case "minor": return "exclamationmark.circle.fill"
-        case "major": return "exclamationmark.triangle.fill"
-        case "critical": return "xmark.octagon.fill"
-        default: return "circle.dotted"
-        }
-    }
+    var iconName: String { "sparkles" }
 
     var iconColor: Color {
         color(for: indicator)
+    }
+
+    var iconOpacity: Double {
+        indicator == "none" ? 1.0 : 0.5
     }
 
     func color(for indicator: String) -> Color {
